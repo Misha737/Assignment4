@@ -99,11 +99,12 @@ create table promocode(
 
 -- встановлює зв'яозк many:many між користувачами та промокодами
 create table customers_promocodes(
-	customer_id int,
+	customer_id int, -- ідентифікатор для користувача
+	promocode_id int, -- ідентифікатор для промокода
+	primary key (customer_id, promocode_id)
 	foreign key (customer_id) references customer(id)
 		on delete cascade
 		on update cascade,
-	promocode_id int,
 	foreign key (promocode_id) references promocode(id)
 		on delete cascade
 		on update cascade
@@ -111,11 +112,12 @@ create table customers_promocodes(
 
 -- корзина для користувача
 create table basket(
-	customer_id int,
+	customer_id int, -- ідентифікатор для користувача
+	book_id int, -- ідентифікатор для книги
+	primary key (customer_id, book_id);
 	foreign key (customer_id) references customer(id)
 		on delete cascade
 		on update cascade,
-	book_id int,
 	foreign key (book_id) references book(id)
 		on delete cascade
 		on update cascade
