@@ -51,15 +51,15 @@ create table custom_order(
 -- для встановлення зв'язку між книгами та 
 create table orders_books(
 	order_id int, -- індентифікатор замовлення
+	book_id int, -- індентифікатор книги
+	primary key (order_id, book_id),
 	foreign key (order_id) references custom_order(id)
 		on update cascade
 		on delete cascade,
-	book_id int, -- індентифікатор книги
 	foreign key (book_id) references book(id)
 		on update cascade,
 	quantity int, -- кількість замовлення
 	cost int check (cost >= 0), -- ціна в момент покупки за одину книгу
-	unique (order_id, book_id)
 );
 
 -- останні топ 5 переглянутих книг користувача
