@@ -49,27 +49,28 @@ ERD
 
 Таблиця всіх індексів:
 
-table_name	index_name	column_name
-basket	book_id	book_id
-basket	customer_id	customer_id
-book	name_index	name
-book	PRIMARY	id
-book	provider_id	provider_id
-custom_order	customer_id	customer_id
-custom_order	PRIMARY	id
-customer	email	email
-customer	PRIMARY	id
-customer	registration_date_index	registration_date
-customer_last_books	book1_id	book1_id
-customer_last_books	book2_id	book2_id
-customer_last_books	book3_id	book3_id
-customer_last_books	book4_id	book4_id
-customer_last_books	book5_id	book5_id
-customer_last_books	customer_id	customer_id
-customers_promocodes	customer_id	customer_id
-customers_promocodes	promocode_id	promocode_id
-orders_books	book_id	book_id
-orders_books	order_id	order_id
-orders_books	order_id	book_id
-promocode	PRIMARY	id
-provider	PRIMARY	id
+| table_name             | index_name             | column_name        |
+|------------------------|------------------------|--------------------|
+| basket                 | book_id                | book_id            |
+| basket                 | customer_id            | customer_id        |
+| book                   | name_index             | name               |
+| book                   | PRIMARY                | id                 |
+| book                   | provider_id            | provider_id        |
+| custom_order           | customer_id            | customer_id        |
+| custom_order           | PRIMARY                | id                 |
+| customer               | email                  | email              |
+| customer               | PRIMARY                | id                 |
+| customer               | registration_date_index| registration_date  |
+| customer_last_books    | book1_id               | book1_id           |
+| customer_last_books    | book2_id               | book2_id           |
+| customer_last_books    | book3_id               | book3_id           |
+| customer_last_books    | book4_id               | book4_id           |
+| customer_last_books    | book5_id               | book5_id           |
+| customer_last_books    | customer_id            | customer_id        |
+| customers_promocodes   | customer_id            | customer_id        |
+| customers_promocodes   | promocode_id           | promocode_id       |
+| orders_books           | book_id                | book_id            |
+| orders_books           | order_id               | order_id           |
+| orders_books           | order_id_book_id       | book_id            |
+| promocode              | PRIMARY                | id                 |
+| provider               | PRIMARY                | id                 |
